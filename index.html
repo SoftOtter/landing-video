@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='ru'>
+	<head>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" href="CSS\reset.css">
+		<link rel="stylesheet" href="CSS\style.css">
+		<script defer src="js/script.js"></script>
+		<title>ГК "СносСтройИнвест"</title>
+	</head>
+	<body>
+		<nav>
+			<button class="quit-btn"><div class="quit-icon"></div></button>
+
+			<div class="about-company">
+				<span class="nav-header">О компании</span>
+				<a href="#">15 лет с вами</a>
+				<a href="#">Команда</a>
+				<a href="#">Философия компании</a>
+				<a href="#">Политика охраны труда</a>
+				<a href="#">Наши клиенты</a>
+				<a href="#">Лицензии и сертификаты</a>
+				<a href="#">Мультимедиа</a>
+				<a href="#">Вакансии</a>
+			</div>
+
+			<div class="scope">
+				<span class="nav-header">Сфера деятельности</span>
+				<a href="#">Снос зданий и сооружений</a>
+				<a href="#">Проектирование и согласование</a>
+				<a href="#">Инженерные изыскания</a>
+				<a href="#">Сопровождение проекта</a>
+				<a href="#">Рециклинг</a>
+				<a href="#">Рекультивация</a>
+				<a href="#">Строительство</a>
+			</div>
+
+			<div class="objects">
+				<span class="nav-header">Объекты</span>
+				<a href="#">Выполненные объекты</a>
+				<a href="#">Карточка объекта</a>
+			</div>
+
+			<div class="contacts">
+				<span class="nav-header">Контакты</span>
+				<a href="#">Связь on-line</a>
+				<a href="#">Пригласить в тендер</a>
+				<a href="#">Контакты пресс-службы</a>
+			</div>
+
+			<div class="news">
+				<span class="nav-header">Новости</span>
+				<a href="#">Новости компании</a>
+				<a href="#">Пресса о нас</a>
+			</div>
+
+			<div class="call-btn-wrapper">
+				<button class="call-btn">
+					<img src="img\call-icon.svg"/>
+					<span>Заказать звонок</span>
+				</button>
+			</div>
+		</nav>
+		<div class="site">
+			<header>
+				<img class="logo" src="img\logo.svg"/>
+				
+				<div class="reward">
+					<img class="goblet" src="img\goblet.png"/>
+					<span>Лидер демонтажной отрасли Санкт-Петербурга</span>
+				</div>
+				
+				<div class="btn-menu-wrapper">
+					<button class="btn-menu">
+						<span class="btn-name">Меню</span>
+						<div class="burger-btn"></div>
+					</button>
+				</div>
+			
+			</header>
+			
+			<main>
+				<video class="video-background" src="videos/yosemite.mp4" muted></video>
+				
+				<div class="rhomb">
+					<button class="btn-play">
+						<img class="play-icon" src="img\play-icon.svg"/>
+					</button>
+				</div>
+				
+			
+				<h1>Многопрофильный<br/>демонтажный холдинг</h1>
+				
+				<div class="splitter"></div>
+				
+				<p class="description">ГК «СносСстройИнвест» осуществляет весь <br/> спектр строительно-демонтажных работ</p>
+				
+				<button class="btn-sign-up">
+					<span class="btn-name1">Зарегистрироваться</span>
+					<div class="arrow"></div>
+				</button>
+				
+				<div class="video-switcher">
+					<div class="video-select active"></div>
+					<div class="video-select"></div>
+					<div class="video-select"></div>
+					<div class="video-select"></div>
+				</div>
+			</main>
+			
+			<footer>
+				<p class="copyright">2018 © CносСтройИнвест <br/>
+				«Лидер демонтажной отрасли Санкт-Петербурга»</p>
+			</footer>
+
+			<div class="overlay"></div>
+		</div>
+		
+		<div class="form">
+			<div class="popup">
+				<div class="form-start">
+					<p class="form-name">Регистрация</p>
+					<button class="quit-btn">
+						<div class="quit-icon"></div>
+					</button>
+				</div>
+				<form action="" method="post">
+					<div class="radio-btn">
+						<input class="type-of-client" type="radio" id="company" name="type-of-client" value="company">
+						<label for="company" class="field-decoration type-of-client-switcher">Компания</label>
+		
+						<input class="type-of-client" type="radio" id="individual" name="type-of-client" value="individual" checked>
+						<label for="individual" class="field-decoration type-of-client-switcher">Физ. лицо</label>
+					</div>
+		
+					<label for="name">Имя</label>
+					<input class="field-decoration name" type="text" placeholder="Например: Иван" name="user-name" id="name" required>
+		
+					<label for="tel">Номер телефона</label>
+					<div class="tel-fields">
+						<div class="field-decoration region-code">+7</div>
+						<input class="field-decoration tel" type="tel" placeholder="XXX-XX-XX" id="tel" name="tel-number" pattern="\d\d\d-\d\d-\d\d">
+					</div>
+		
+					<label for="">Выберете регион</label>
+					<select class="field-decoration region" id="region">
+						<option value="SPb">Санкт-Петербург</option>
+						<option value="Msc">Москва</option>
+						<option value="Krasnoyarsk">Красноярск</option>
+						<option value="Krasnodar">Краснодар</option>
+					</select>
+		
+					<button class="submit" type="submit">Зарегистрироваться</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
