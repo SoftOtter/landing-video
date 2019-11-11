@@ -107,6 +107,10 @@ main {
 	position: relative;
 }
 
+main > * {
+	z-index: 1;
+}
+
 main .video-background {
 	position: fixed;
 	top: 0px;
@@ -128,7 +132,7 @@ main .rhomb {
 	left: 50%;
 	margin-left: -262px;
 	top: -5%;
-	z-index: -1;
+	z-index: 0;
 }
 
 main .btn-play {
@@ -143,6 +147,13 @@ main .btn-play {
 	position: absolute;
 	right: -26px;
 	top: 242px;
+	
+}
+
+main .btn-play.hidden {
+	transition: opacity .3s, visibility 0s .3s;
+	opacity: 0;
+	visibility: hidden;
 }
 
 main .btn-play .play-icon {

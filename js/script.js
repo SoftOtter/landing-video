@@ -66,6 +66,8 @@ window.addEventListener('DOMContentLoaded', function () {
             let activeSwitcher = document.querySelector('main .video-switcher .video-select.active');
             activeSwitcher.classList.remove('active');
             videoSwitchers[i].classList.add('active');
+            let playButton = document.querySelector('main .btn-play');
+            playButton.classList.remove('hidden');
         });
     };
 
@@ -74,6 +76,20 @@ window.addEventListener('DOMContentLoaded', function () {
     playButton.addEventListener('click', function () {
         let video = document.querySelector('main video');
         video.play();
+        playButton.classList.add('hidden');
+    });
+
+    //Video switch on end
+    let video = document.querySelector('main video');
+    video.addEventListener('ended', function () {
+       let videoIndex = videos.indexOf(video.attributes.src.value);
+       let nextIndex = (videoIndex + 1) % 4;
+       video.src = videos[nextIndex];
+       //video.load();
+       video.play();
+
+       videoSwitchers[videoIndex].classList.remove('active');
+       videoSwitchers[nextIndex].classList.add('active');
     });
 
 });
