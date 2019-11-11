@@ -416,7 +416,7 @@ nav .quit-btn {
 	right: 72px;
 }
 
-nav > div {
+nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -432,6 +432,7 @@ nav a {
 	line-height: 40px;
 	text-decoration: none;
 	color: #2e2e2e;
+	display: block;
 }
 
 nav a:hover {
@@ -440,6 +441,8 @@ nav a:hover {
 }
 
 nav .call-btn-wrapper {
+	display: flex;
+    flex-direction: column;
 	justify-content: flex-end;
 }
 
