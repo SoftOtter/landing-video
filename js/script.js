@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // Video switcher
     const videoSwitchers = document.querySelectorAll('main .video-switcher .video-select');
     const videos = ['videos/yosemite.mp4', 'videos/rain.mp4', 'videos/nature.mp4', 'videos/ice.mp4'];
-    for (const i = 0; i < videoSwitchers.length; i++) {
+    for (let i = 0; i < videoSwitchers.length; i++) {
         videoSwitchers[i].addEventListener('click', function () {
             if (videoSwitchers[i].classList.contains('active')) {
                 return;
