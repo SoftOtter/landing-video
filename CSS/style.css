@@ -52,13 +52,13 @@ header .reward span {
 	margin-left: 15px;
 }
 
-header .btn-menu-wrapper {
+header .btn-open-menu-wrapper {
 	width: 325px;
 	display: flex;
 	justify-content: flex-end;
 }
 
-header .btn-menu {
+header .btn-open-menu {
 	background-color: transparent;
 	font-family: "HarmoniaBd", sans-serif;
 	font-size: 16px;
@@ -70,19 +70,19 @@ header .btn-menu {
 	align-items: center;
 }
 
-header .btn-menu .btn-name {
+header .btn-open-menu .btn-name {
 	margin-right: 10px;
 	line-height: 17px;
 }
 
-header .btn-menu .burger-btn{
+header .btn-open-menu .burger-btn{
 	width: 14px;
 	height: 3px;
 	background-color: #fff;
 	display: inline-block;
 }
 
-header .btn-menu .burger-btn:before{
+header .btn-open-menu .burger-btn:before{
 	content: "";
 	display: block;
 	width: 24px;
@@ -91,7 +91,7 @@ header .btn-menu .burger-btn:before{
 	transform: translateY(-7px);
 }
 
-header .btn-menu .burger-btn:after{
+header .btn-open-menu .burger-btn:after{
 	content: "";
 	display: block;
 	width: 24px;

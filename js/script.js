@@ -1,91 +1,83 @@
 window.addEventListener('DOMContentLoaded', function () {
+    const site = document.querySelector('.site');
+    const menu = document.querySelector('nav');
+    const overlay = document.querySelector('.site .overlay');
+
     // Open menu
-    let menuButton = document.querySelector('header .btn-menu');
+    const menuButton = document.querySelector('header .btn-open-menu');
     menuButton.addEventListener('click', function () {
-        let site = document.querySelector('.site');
         site.classList.add('site-transform');
-        let menu = document.querySelector('nav');
         menu.classList.add('active');
-        let overlay = document.querySelector('.site .overlay');
         overlay.classList.add('active');
     });
     
     // Close menu
-    let closeMenuButton = document.querySelector('nav .quit-btn');
+    const closeMenuButton = document.querySelector('nav .quit-btn');
     closeMenuButton.addEventListener('click', function () {
-        let site = document.querySelector('.site');
         site.classList.remove('site-transform');
-        let menu = document.querySelector('nav');
         menu.classList.remove('active');
-        let overlay = document.querySelector('.site .overlay');
         overlay.classList.remove('active');
     });
-    let closeMenuBackground = document.querySelector('.site .overlay');
+    const closeMenuBackground = overlay; // document.querySelector('.site .overlay');
     closeMenuBackground.addEventListener('click', function () {
-        let site = document.querySelector('.site');
         site.classList.remove('site-transform');
-        let menu = document.querySelector('nav');
         menu.classList.remove('active');
-        let overlay = document.querySelector('.site .overlay');
         overlay.classList.remove('active');
     });
 
+
+    const form = document.querySelector('.form');
 
     // Open popup
-    let regButton = document.querySelector('main .btn-sign-up');
+    const regButton = document.querySelector('main .btn-sign-up');
     regButton.addEventListener('click', function () {
-        let form = document.querySelector('.form');
         form.classList.add('active');
     });
 
     // Close popup
-    let closePopupButton = document.querySelector('.form .quit-btn');
+    const closePopupButton = document.querySelector('.form .quit-btn');
     closePopupButton.addEventListener('click', function () {
-        let form = document.querySelector('.form');
         form.classList.remove('active');
     });
-    let closePopupBackground = document.querySelector('.form');
+    const closePopupBackground = form; // document.querySelector('.form');
     closePopupBackground.addEventListener('click', function (event) {
         if (event.target === closePopupBackground) {
-            let form = document.querySelector('.form');
             form.classList.remove('active');
         }
     });
 
+
+    const playButton = document.querySelector('main .btn-play');
+    const video = document.querySelector('main video');
+
     // Video switcher
-    let videoSwitchers = document.querySelectorAll('main .video-switcher .video-select');
-    let videos = ['videos/yosemite.mp4', 'videos/rain.mp4', 'videos/nature.mp4', 'videos/ice.mp4'];
-    for (let i = 0; i < videoSwitchers.length; i++) {
+    const videoSwitchers = document.querySelectorAll('main .video-switcher .video-select');
+    const videos = ['videos/yosemite.mp4', 'videos/rain.mp4', 'videos/nature.mp4', 'videos/ice.mp4'];
+    for (const i = 0; i < videoSwitchers.length; i++) {
         videoSwitchers[i].addEventListener('click', function () {
             if (videoSwitchers[i].classList.contains('active')) {
                 return;
             }
-            let video = document.querySelector('main video');
             video.src = videos[i];
             video.load();
-            let activeSwitcher = document.querySelector('main .video-switcher .video-select.active');
+            const activeSwitcher = document.querySelector('main .video-switcher .video-select.active');
             activeSwitcher.classList.remove('active');
             videoSwitchers[i].classList.add('active');
-            let playButton = document.querySelector('main .btn-play');
             playButton.classList.remove('hidden');
         });
     };
 
     // Video play-button
-    let playButton = document.querySelector('main .btn-play');
     playButton.addEventListener('click', function () {
-        let video = document.querySelector('main video');
         video.play();
         playButton.classList.add('hidden');
     });
 
     //Video switch on end
-    let video = document.querySelector('main video');
     video.addEventListener('ended', function () {
-       let videoIndex = videos.indexOf(video.attributes.src.value);
-       let nextIndex = (videoIndex + 1) % 4;
+       const videoIndex = videos.indexOf(video.attributes.src.value);
+       const nextIndex = (videoIndex + 1) % 4;
        video.src = videos[nextIndex];
-       //video.load();
        video.play();
 
        videoSwitchers[videoIndex].classList.remove('active');
