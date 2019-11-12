@@ -75,13 +75,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Video switch on end
     video.addEventListener('ended', function () {
-       const videoIndex = videos.indexOf(video.attributes.src.value);
-       const nextIndex = (videoIndex + 1) % 4;
-       video.src = videos[nextIndex];
-       video.play();
+        const currentVideoIndex = videos.indexOf(video.attributes.src.value);
+        let nextVideoIndex = 0;
+        // Check that sizes of arrays are matching
+        if (videoSwitchers[(currentVideoIndex + 1) % videos.length] !== undefined) {
+           nextVideoIndex = (currentVideoIndex + 1) % videos.length;
+        }
+        video.src = videos[nextVideoIndex];
+        video.play();
 
-       videoSwitchers[videoIndex].classList.remove('active');
-       videoSwitchers[nextIndex].classList.add('active');
+        videoSwitchers[currentVideoIndex].classList.remove('active');
+        videoSwitchers[nextVideoIndex].classList.add('active');
     });
 
 });
