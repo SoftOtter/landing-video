@@ -150,7 +150,7 @@ main .btn-play {
 }
 
 main .btn-play.hidden {
-	transition: opacity .3s, visibility 0s .3s;
+	transition: opacity .5s, visibility 0s .5s;
 	opacity: 0;
 	visibility: hidden;
 }
