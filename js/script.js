@@ -32,6 +32,12 @@ window.addEventListener('DOMContentLoaded', function () {
     const regButton = document.querySelector('main .btn-sign-up');
     regButton.addEventListener('click', function () {
         form.classList.add('active');
+
+        let video = document.querySelector('main video');
+        video.pause();
+
+        let playButton = document.querySelector('main .btn-play');
+        playButton.classList.remove('hidden');
     });
 
     // Close popup
